@@ -112,7 +112,10 @@ namespace PVS_DiskUP
         [CategoryAttribute("PVS Specific")]
         public uint version { get { return header.version; } }
         [CategoryAttribute("PVS Specific")]
-        public uint writeCacheType { get { return header.writeCacheType; } }
+        public string writeCacheType { get {                
+
+                return Enum.GetName(typeof(Constants.WriteCacheType), header.writeCacheType);
+            } }
         [CategoryAttribute("PVS Specific")]
         public string writeCacheSize
         {
